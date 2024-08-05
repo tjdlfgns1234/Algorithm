@@ -31,7 +31,7 @@ def get_val2(row, row_e, col, col_e): #여기서 직사각형 합계를 계산
         for j in range(col, col_e+1):
             val += arr[i][j]
 
-            if arr[i][j] < 0: #음수 검사
+            if arr[i][j] <= 0: #음수 검사
                 return 0, 1, -1
     d2_n, d2_m = row_e+1 - row , col_e+1 - col
 
