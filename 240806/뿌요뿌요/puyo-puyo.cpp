@@ -34,11 +34,11 @@ void solve() {
     cout << ans2 << ' ' << ans;
 }
 void dfs(int x, int y){
-    int color = arr[x][y], cnt = 0;
+    int color = arr[x][y], cnt = 1;
 
     queue <pair<int,int>> q;
-    q.push({x,y});
-
+    q.push({x,y}), vit[x][y] = 1;
+    
     while(!q.empty()){
         int ax = q.front().first, ay = q.front().second;
         q.pop();
