@@ -34,13 +34,14 @@ void solve() {
 void bfs(){
     queue<pair<int,int>> q;
     q.push({0,0});
+    vit[0][0] = 1;
     int ans = 0;
 
     while(!q.empty()){
         int x = q.front().first;
         int y = q.front().second; 
         q.pop();
-        vit[x][y] = true;
+   
 
         if(x == n-1 && y == m-1){
             ans = 1;
