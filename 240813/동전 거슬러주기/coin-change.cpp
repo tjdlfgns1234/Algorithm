@@ -26,18 +26,20 @@ void solve() {
     calc();
 }
 void calc(){
+    dp[0] = 0;
 
-    for(int i = 0; i < n;i++)
-        for(int j = arr[i], cnt = 1; j<=m;j+=arr[i], cnt++)
-            if(dp[j] == 0)
-                dp[j] += cnt;
-            else
-                dp[j] = min(dp[j], cnt);
-
+    for(int i = 1; i <= m;i++)
+        dp[i] = INT_MAX;
+    
     for(int i = 0; i < n;i++)
         for(int j = 1; j<=m;j++)
-            if(j-arr[i] >= 0)
+            if(dp[j-arr[i]] == INT_MAX)
+                continue;
+            else if(j-arr[i] >= 0)
                 dp[j] = min(dp[j-arr[i]]+1, dp[j]); 
 
-    cout << dp[m];
+    if(dp[m] == INT_MAX)
+        cout << -1;
+    else        
+        cout << dp[m];
 }
