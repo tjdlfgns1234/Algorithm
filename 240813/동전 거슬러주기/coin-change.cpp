@@ -27,9 +27,14 @@ void solve() {
 }
 void calc(){
     for(int i = 0; i < n;i++)
+        for(int j = arr[i]; j<=m;j+= arr[i])
+            dp[j]++;
+
+    for(int i = 0; i < n;i++)
         for(int j = 1; j<=m;j++)
             if(j-arr[i] >= 0)
-                dp[j] = min(dp[j-arr[i]]+1,dp[j]+1); 
-            
+                if(dp[j]==0)
+                    dp[j] = dp[j-arr[i]]+1; 
+
     cout << dp[m];
 }
