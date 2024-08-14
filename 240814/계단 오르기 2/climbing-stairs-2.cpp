@@ -26,22 +26,18 @@ void solve() {
     calc();
 }
 void calc(){
-    for(int i = 0; i <= n;i++)
-        for(int j = 0; j <= 3;j++)
-            dp[i][j] = INT_MIN;
+   
+    dp[1][1] = arr[1];
 
-    dp[0][0] = 0;
-
-    for(int i = 0; i <= n;i++){
-        for(int j = 0; j <= 3;j++){
-            if(dp[i][j] == INT_MIN)
-                continue;
-
-            if (i + 1 <= n && j + 1 <= 3)
-                dp[i + 1][j + 1] = max(dp[i + 1][j + 1], dp[i][j] + arr[i + 1]);
-
-            if (i + 2 <= n)
-                dp[i + 2][j] = max(dp[i + 2][j], dp[i][j] + arr[i + 2]);
+    dp[2][0] = arr[2];
+    dp[2][2] = arr[1] + arr[2];
+    
+    for(int i = 3; i <= n; i++) {
+        for(int j = 0; j <= 3; j++) {
+            if (dp[i - 2][j] != 0)
+                dp[i][j] = max(dp[i][j], dp[i - 2][j] + arr[i]);
+            if(j && dp[i - 1][j - 1] != 0)
+                dp[i][j] = max(dp[i][j], dp[i - 1][j - 1] + arr[i]);
         }
     }
     
