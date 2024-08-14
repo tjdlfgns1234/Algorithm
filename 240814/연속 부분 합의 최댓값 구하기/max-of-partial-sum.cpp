@@ -30,14 +30,15 @@ void calc(){
         dp[i] = INT_MIN;
 
     int ans = INT_MIN;
-
-    for(int i = 1;i<= n;i++)
-        cin >> arr[i];
+        
     dp[0] = 0;
-    dp[1] = 2*arr[1];
+    dp[1] = arr[1];
+
+    for(int i = 2;i<= n;i++)
+        dp[i] = max(dp[i-1]+ arr[i], arr[i] );
 
     for(int i = 1;i<= n;i++)
-        ans = max(2*arr[i], dp[i-1]+ arr[i]);
+        ans = max(ans, dp[i]);
 
     cout << ans;
 }
