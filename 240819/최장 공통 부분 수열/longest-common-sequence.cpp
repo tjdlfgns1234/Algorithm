@@ -6,8 +6,8 @@ void calc();
 void init();
 
 string a,b;
-int dp[1001][101] = {0};
-int arr[1001][101] = {0};	
+int dp[1001][1001] = {0};
+int arr[1001][1001] = {0};	
 
 int main()
 {
