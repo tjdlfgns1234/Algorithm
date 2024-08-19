@@ -7,7 +7,6 @@ void init();
 
 string a,b;
 int dp[1001][1001] = {0};
-int arr[1001][1001] = {0};	
 
 int main()
 {
