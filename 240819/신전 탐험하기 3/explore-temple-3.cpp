@@ -44,11 +44,16 @@ void calc(){
         for(int j = 1; j <=m ; j++) 
             for(int k = 1; k <= m ;k++)
                 if(j == k) continue;
-                else dp[i][j] = max(dp[i-1][j] + arr[i][k], dp[i][j]);
+                else dp[i][j] = max(dp[i-1][k] + arr[i][j], dp[i][j]);
     
     
     int ans = INT_MIN;
     for (int i = 1; i <= m; i++)
         ans = max(ans, dp[n][i]);
+
+
+    // for (int i = 1; i <= m; i++)
+    //     cout <<  dp[n][i] << ' ';
+    
     cout << ans;
 }
