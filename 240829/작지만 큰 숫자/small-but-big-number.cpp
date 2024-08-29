@@ -15,15 +15,14 @@ int main() {
     for(int i = 0; i < m; i++){
         cin >> tmp;
 
-        if(*s.begin() <= tmp)
-            if(s.lower_bound(tmp) == s.begin())
-                cout << *s.begin() << '\n', s.erase(*s.begin());
-            else if(*s.lower_bound(tmp) == tmp)
-                cout << *s.lower_bound(tmp) << '\n', s.erase(*s.lower_bound(tmp));
-            else 
-                cout << *(--s.lower_bound(tmp))  << '\n', s.erase(*(--s.lower_bound(tmp)));
-        else
+        set<int>::iterator it = s.upper_bound(tmp);
+        if(it == s.begin()){
             cout << -1 << '\n';
+            continue;
+        }
+        it--;
+
+        cout << *it <<'\n', s.erase(*it);
     }
 
 
