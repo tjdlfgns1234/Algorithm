@@ -14,14 +14,13 @@ else:
                 cnt +=1
             else:
                 break
-        new_arr = string[i+1:] + string[:n-cnt]
+        new_arr = string[i:] + string[:n-cnt]
     else:
         new_arr= string[:]
     ccnt=0
-#    print(new_arr)
-#    for i in range(1,n):
-  #      if new_arr[i]!=new_arr[i-1]:
-  #          ccnt +=1
+    for i in range(1,n):
+        if new_arr[i]!=new_arr[i-1]:
+            ccnt +=1
             #print()
 
     print((ccnt+1)*2)
