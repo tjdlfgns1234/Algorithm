@@ -3,8 +3,8 @@ n = len(string)
 #print(string)
 if (len(set(string))==1) and (len(string)==10):
     print(3)
-# elif (len(set(string))==1):
-#     print(2)
+elif (len(set(string))==1):
+     print(2)
 else:
     cnt = 0
     val = string[-1]
