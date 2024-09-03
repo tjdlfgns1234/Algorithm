@@ -14,7 +14,7 @@ else:
                 cnt +=1
             else:
                 break
-        new_arr = string[i:] + string[:n-cnt]
+        new_arr = string[i+1:] + string[:n-cnt+1]
     else:
         new_arr= string[:]
     ccnt=0
