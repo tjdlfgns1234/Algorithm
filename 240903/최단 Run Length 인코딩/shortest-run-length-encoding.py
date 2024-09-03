@@ -18,7 +18,7 @@ else:
     else:
         new_arr= string[:]
     ccnt=0
-    for i in range(0,n-1):
+    for i in range(1,n):
         if new_arr[i]!=new_arr[i-1]:
             ccnt +=1
             #print()
