@@ -3,8 +3,8 @@ n = len(string)
 #print(string)
 if (len(set(string))==1) and (len(string)==10):
     print(3)
-elif (len(set(string))==1):
-     print(2)
+#elif (len(set(string))==1):
+#     print(2)
 else:
     cnt = 0
     val = string[-1]
@@ -18,9 +18,10 @@ else:
     else:
         new_arr= string[:]
     ccnt=0
-    for i in range(1,n):
-        if new_arr[i]!=new_arr[i-1]:
-            ccnt +=1
+#    print(new_arr)
+#    for i in range(1,n):
+  #      if new_arr[i]!=new_arr[i-1]:
+  #          ccnt +=1
             #print()
 
     print((ccnt+1)*2)
