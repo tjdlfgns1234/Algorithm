@@ -2,8 +2,8 @@
 using namespace std;
 
 int n,k;
-int arr[101][101];
-int dp[101][101];
+int arr[501][501];
+int dp[501][501];
 
 int main() {
     cin >> n >> k;
