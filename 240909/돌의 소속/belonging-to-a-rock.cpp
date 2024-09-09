@@ -32,7 +32,6 @@ void solve(){
         dp[stone][i]++; // 돌 증가
     }
 
-
     int a,b;
     for(int i = 0; i < k;i++){
         cin >> a >> b;
@@ -41,8 +40,4 @@ void solve(){
         cout << dp[1][b] - dp[1][a-1] << " ";
         cout << dp[2][b] - dp[2][a-1] << "\n";
     }
-
-
-
-
 }
