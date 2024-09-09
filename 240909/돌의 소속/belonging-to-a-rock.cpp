@@ -4,7 +4,7 @@ using namespace std;
 void solve();
 
 int n,k;
-int arr[100001] = {0};
+short arr[100001] = {0};
 int dp[3][100001] = {0};
 
 
