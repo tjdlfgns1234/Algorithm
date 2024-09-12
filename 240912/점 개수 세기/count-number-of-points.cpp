@@ -22,17 +22,11 @@ int main() {
         auto q = mp.lower_bound(a),w = mp.upper_bound(b);
         if(q == mp.end())
             cout << 0 << '\n';
-        else if(q == mp.begin()&& w != mp.end())
-            cout << w->second -1 << '\n';
-        else if(q == mp.begin()&& w == mp.end())
-            cout << n << '\n';
-        else if(q != mp.begin()&& w != mp.end())
-            cout << w->second - q->second << '\n';
+        else if(w == mp.end())
+            cout << n - q->second + 1 << '\n';
         else
-            if(q->first == a)
-                cout << n - q->second +1 << '\n';
-            else
-                cout << n - q->second << '\n';
+            cout << w->second - q->second << '\n';
+        
 
     }
     return 0;
