@@ -3,7 +3,7 @@ using namespace std;
 
 int n,q;
 
-map <int,int> mp;
+unordered_map <int,int> mp;
 
 
 int main() {
