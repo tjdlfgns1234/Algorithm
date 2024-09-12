@@ -20,14 +20,7 @@ int main() {
         cin >> a >> b;
 
         auto q = mp.lower_bound(a),w = mp.upper_bound(b);
-        if(q == mp.end())
-            cout << 0 << '\n';
-        else if(w == mp.end())
-            cout << n - q->second + 1 << '\n';
-        else
-            cout << w->second - q->second << '\n';
-        
-
+        cout << w->second - q->second << '\n';
     }
     return 0;
 }
