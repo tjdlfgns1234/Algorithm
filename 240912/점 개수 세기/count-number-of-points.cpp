@@ -27,9 +27,11 @@ int main() {
         else if(q != mp.begin()&& w != mp.end())
             cout << w->second - q->second << '\n';
         else
-            cout << n - q->second << '\n';
+            if(q->first == a)
+                cout << n - q->second +1 << '\n';
+            else
+                cout << n - q->second << '\n';
 
     }
-
     return 0;
 }
