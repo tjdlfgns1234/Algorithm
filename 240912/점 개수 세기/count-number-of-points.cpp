@@ -19,6 +19,11 @@ int main() {
     for(int i =0; i < q;i++){
         cin >> a >> b;
 
+        if(a == b){
+            cout << 0 << '\n';
+            continue;
+        }
+
         auto q = mp.lower_bound(a),w = mp.upper_bound(b);
         if(q == mp.begin()&& w != mp.end())
             cout << w->second -1 << '\n';
