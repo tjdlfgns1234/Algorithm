@@ -22,10 +22,10 @@ int main() {
          cin >> a >> b, arr[i].x = a, arr[i].y = b;
 
     for(int i = 1; i < n; i++)
-        l[i] = dist(arr[i-1], arr[i]);
+        l[i] = l[i-1] + dist(arr[i-1], arr[i]);
 
     for(int i = n-2; i >= 0; i--)
-        r[i] = dist(arr[i+1], arr[i]);
+        r[i] = r[i+1] + dist(arr[i+1], arr[i]);
 
     solve();
 
