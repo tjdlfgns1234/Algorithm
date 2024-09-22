@@ -25,7 +25,7 @@ void solve(){
         idx--;
     }
     
-    int ans = 0;
+    long long ans = 0;
     for(int i = 1; i < s.size();i++)
         if(s[i-1] == s[i] && s[i] == '(')
             ans += pre[i];
