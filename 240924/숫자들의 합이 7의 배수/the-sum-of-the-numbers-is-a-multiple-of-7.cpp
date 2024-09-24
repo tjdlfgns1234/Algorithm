@@ -3,6 +3,8 @@
 using namespace std;
 
 int n;
+int arr[50001] = {0};
+
 void solve();
 
 int main() {
@@ -14,9 +16,7 @@ int main() {
 void solve(){
     cin >> n;
 
-    vector<int> arr(n);
-
-    for(auto&i : arr) cin >>i;
+    for(int i = 0; i < n;i++) cin >> arr[i];
 
     // 연속하게 고른 숫자들의 합이 7의 배수 (x%7==0)
     // 숫자는 서로 다름
@@ -26,10 +26,9 @@ void solve(){
     for(int i = 0; i < n;i++){
         sum=0;
         for(int j = i; j < n;j++){
-            sum += arr[j];
-            if(sum%7==0)
+            sum =(sum + arr[j]) %7;
+            if(sum == 0)
                 ans = max(ans,j-i+1);
-            sum = sum%7;
         }
     }
 
