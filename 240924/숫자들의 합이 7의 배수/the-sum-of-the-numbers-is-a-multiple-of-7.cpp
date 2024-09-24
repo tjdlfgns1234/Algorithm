@@ -8,7 +8,9 @@ int arr[50001] = {0};
 void solve();
 
 int main() {
-    
+    ios::sync_with_stdio(NULL);
+    cin.tie(NULL), std::cout.tie(NULL);
+
     solve();
 
     return 0;
@@ -21,8 +23,7 @@ void solve(){
     // 연속하게 고른 숫자들의 합이 7의 배수 (x%7==0)
     // 숫자는 서로 다름
 
-    int ans = 0;
-    int sum = 0;
+    int ans = 0,sum = 0;
     for(int i = 0; i < n;i++){
         sum=0;
         for(int j = i; j < n;j++){
