@@ -36,7 +36,7 @@ void solve(){
             sum =(sum + arr[j]) %7;
             if(sum == 0)
                 ans = max(ans,j-i+1);
-            if(j-i+1 < ans)
+            if(n-j+1 < ans)
                 break;
         }
     }
