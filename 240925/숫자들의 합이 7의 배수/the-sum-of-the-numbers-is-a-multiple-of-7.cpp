@@ -33,7 +33,7 @@ void solve(){
     for(int i = 0; i < n;++i){
         sum=0;
         for(int j = i; j < n;++j){
-            if(j-i+1 <= ans)
+            if(j-i+1 < ans)
                 break;
             sum =(sum + arr[j]) %7;
             if(sum == 0)
