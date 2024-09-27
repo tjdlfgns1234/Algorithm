@@ -18,16 +18,19 @@ void solve(){
         cin >> arr[i];
 
     int sum = 0;
-    int ans = n, j = 0;
+    int ans = n+1, j = -1;
     for(int i = 0; i < n; i++) {
 
-        int j;
-        for(j = i + 1; j < n && sum < s;j++){
-            sum+= arr[j];
-        }
-        ans = min(ans, j - i + 1);
+        while(j+1 < n && sum < s)
+            j++, sum+= arr[j];
+        
+        if(sum >=s)
+            ans = min(ans, j - i + 1);
 
         sum -= arr[i];
     }
-    cout << ans;
+    if(ans != n+1)
+        cout << ans;
+    else
+        cout << -1;
 }
