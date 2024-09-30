@@ -32,5 +32,8 @@ void solve(){
      
         }
     }
-    cout << ans;
+    if(ans == 987654321)
+        cout << -1;
+    else
+        cout << ans;
 }
