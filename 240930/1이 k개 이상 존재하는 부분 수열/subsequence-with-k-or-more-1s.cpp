@@ -26,7 +26,7 @@ void solve(){
 
             if(cnt > k){
                 l++, cnt--;
-                while(arr[l] != 1)
+                while(arr[l] != 1 && l < n)
                     l++;
             }
 
