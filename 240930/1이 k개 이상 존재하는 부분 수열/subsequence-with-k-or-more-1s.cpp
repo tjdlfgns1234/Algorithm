@@ -16,20 +16,22 @@ void solve(){
     vector<int> arr(n);
     for(auto& i : arr) cin >> i;
 
-    int ans = 987654321;
+    int ans = 987654321, l = 0, cnt = 0;
 
-    priority_queue <int> q;
     for(int i = 0; i < n;i++ ){
         if(arr[i] == 1){
-            q.push(-i);
+            if(cnt == 0)
+                l = i;
+            cnt++;
 
-            if(q.size() > k)
-                q.pop();
-            if(q.size() == k){
-                int t = -q.top();
-                ans = min(ans,i-t+1);
+            if(cnt > k){
+                l++, cnt--;
+                while(arr[l] != 1)
+                    l++;
             }
-     
+
+            if(cnt == k)
+                ans = min(ans,i - l + 1);
         }
     }
     if(ans == 987654321)
