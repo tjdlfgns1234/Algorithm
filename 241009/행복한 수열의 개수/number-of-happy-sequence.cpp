@@ -41,10 +41,10 @@ void happy_arr(){
     for(int row = 0; row<n; row++){ 
         int cnt = 0;
         int pre = 0;
-        for(int col=1; col<n; col++){
+        for(int col=0; col<n; col++){
             pre = arr[row][col]; //이전 값 저장
             //이전값과 현재 값이 같다면
-            if(pre == arr[row][col-1]){
+            if(pre == arr[row][col]){
                 cnt++;
             }
         }
@@ -60,7 +60,7 @@ void happy_arr(){
         for(int row =0; row<n; row++){
             pre = arr[col][0];
             //이전값과 현재값이 같다면
-            if(pre == arr[col-1][row]){
+            if(pre == arr[col][row]){
                 cnt++;
             }
         }
