@@ -54,7 +54,7 @@ void happy_arr(){
         }
 
     }
-    for(int col = 1; col <n; col++){
+    for(int col = 0; col <n; col++){
         int cnt = 0;
         int pre = 0;
         for(int row =0; row<n; row++){
