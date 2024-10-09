@@ -21,34 +21,32 @@ void solve(){
     // m개 이상의 동일한 원소
     int ans = 0;
     for(int i = 0; i < n;i++){
-        int pre = arr[i][0];
-        int cnt = 1;
-        for(int j = 1; j < n;j++){
-            if(cnt == m){
-                ans++;
-                break;
+        int pre = -1, cnt = 0;
+        for(int j = 0; j < n;j++){
+            if(cnt == 0){
+                pre = arr[i][j];
+                cnt = 1;
             }
-            if(pre == arr[i][j])
+            else if(pre == arr[i][j])
                 cnt++;
             else
                 cnt = 1, pre = arr[i][j];
-             if(cnt == m){
+            if(cnt == m){
                 ans++;
                 break;
             }
         }
-  
-        pre = arr[0][i];
-        cnt = 1;
-        for(int j = 1; j < n;j++){
-            if(cnt == m){
-                ans++;
-                break;
+        pre = -1, cnt = 0;
+        for(int j = 0; j < n;j++){
+            if(cnt == 0){
+               pre = arr[j][i];
+               cnt = 1;
             }
-            if(pre == arr[j][i])
+            else if(pre == arr[j][i])
                 cnt++;
             else
                 cnt = 1, pre = arr[j][i];
+    
             if(cnt == m){
                 ans++;
                 break;
