@@ -17,7 +17,7 @@ void solve(){
 
     for(int i =0; i < n;i++) cin >> arr[i];
 
-    int l = 0, r = 1e5, ans = 0;
+    int l = 1, r = 1e5, ans = 0;
     while(l<=r){
         int mid = l + (r-l)/2;
 
@@ -28,10 +28,8 @@ void solve(){
     }
     cout << ans;
 
-
 }
 bool chk(int mid){
-
     int cnt = 0;
 
     for(int i =0; i < n;i++)
