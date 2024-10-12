@@ -280,7 +280,7 @@ void compare_(int x2,int y2,int v2,int d2){
         if(d > d2)
             v = v2, ax = x2, ay = y2, d = d2;
         else if(d == d2)
-            if(ax < x2)
+            if(ax > x2)
                 v = v2, ax = x2, ay = y2, d = d2;
             else if(ax == x2)
                 if(ay > y2)
