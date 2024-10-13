@@ -16,8 +16,10 @@ void solve(){
 
     for(int i = 0; i < n;i++) cin >> arr[i];
 
-    int j =0, sum = 0, ans = INT_MIN;
+    int sum = 0, ans = INT_MIN;
     for(int i = 0; i < n;i++){
+        if(sum < 0)
+            sum = 0;
         if(sum + arr[i] >= 0)
             sum += arr[i];
         else
