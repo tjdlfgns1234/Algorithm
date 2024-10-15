@@ -19,7 +19,7 @@ void solve(){
     for(int i = 0; i < n; i++) cin >> tmp, q.push(-tmp);
 
     ll ans = 0;
-    while(!q.empty() && q.size()>= 2){
+    while(q.size()>1){
         ll x = -q.top(); q.pop();
         ll y = -q.top(); q.pop();
         ans += x + y;
