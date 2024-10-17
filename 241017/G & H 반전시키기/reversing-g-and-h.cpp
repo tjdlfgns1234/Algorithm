@@ -17,11 +17,9 @@ void solve(){
     string a,b;
     cin >> a >> b;
 
-    int ans = 0, f = -1;
+    int ans = 0, f = 0;
     for(int i = 0; i < n;i++){
         if(a[i] != b[i]){
-            if(f == -1)
-                ans++;
             if(!f)
                 ans++;
             f = 1;
