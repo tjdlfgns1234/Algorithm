@@ -9,8 +9,6 @@ struct p{
 p arr[100001];
 
 bool cmp(p& a, p& b){
-    if(a.e == b.e)
-        return a.s < b.s;
     return a.e < b.e;
 }
 
