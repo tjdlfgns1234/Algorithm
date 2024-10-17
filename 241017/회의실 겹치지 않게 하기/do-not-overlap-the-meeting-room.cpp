@@ -18,6 +18,9 @@ void solve();
 
 int main() {
 
+    ios::sync_with_stdio(NULL);
+    cin.tie(NULL);
+
     solve();
 
     return 0;
