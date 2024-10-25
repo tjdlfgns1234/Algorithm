@@ -17,15 +17,15 @@ void solve(){
     string a,b;
     cin >> a >> b;
 
-    int ans = 0, f = 0, cnt = 0;
+    int ans = 0, cnt = 0;
     for(int i = 0; i < n;i++){
         if(a[i] != b[i] && cnt < 4){
             if(cnt == 0)
                 ans++;
             cnt++;
         }
-        else if(cnt == 4)
-            ans++, cnt = 1;
+        else if(a[i] != b[i] && cnt == 4)
+            ans++, cnt = 1; // 다음 구간 시작
         else{
             cnt = 0;
         }
