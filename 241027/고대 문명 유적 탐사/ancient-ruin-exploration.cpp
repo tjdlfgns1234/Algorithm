@@ -46,7 +46,7 @@ void solve(){
 void explore(){
     // 선택
     ans = 0, ax = 0,ay = 0, v = 0,d = 360;
-    for(int i = 3;i >=1;i--)
+    for(int i = 1;i <=3;i++)
         for(int j = 1; j <= 3; j++){
             rotate_(i,j,deg[0]);
             int cost2 = calc();
@@ -161,8 +161,8 @@ void rotate_(int x, int y,int degree){
         for(int j = 0; j < 5;j++)
             chk[i][j] = arr[i][j];
 
-    for(int i = x-1, q = 0; i <=(x+1) && q< 3 ;i++,q++)
-        for(int j = y-1, p = 0; j<=(y+1) && p < 3;j++,p++)
+    for(int i = x-1, q = 0; i <=x+1&& q< 3 ;i++,q++)
+        for(int j = y-1, p = 0; j<=y+1 && p < 3;j++,p++)
             chk[i][j] = tmp[q][p];
 
 }
@@ -262,7 +262,6 @@ void remove(){ // 3조각 이상의 유물을 제거하는 함수
                 }
             }
         }
-
 }
 void fill_blank(){ 
     // 벽면에 써져있는 숫자를 추가
@@ -280,4 +279,10 @@ void compare_(int x2,int y2,int v2,int d2){
     else if(v == v2)
         if(d > d2)
             v = v2, ax = x2, ay = y2, d = d2;
+        else if(d == d2)
+            if(ay > y2)
+                v = v2, ax = x2, ay = y2, d = d2;
+            else if(ax == x2)
+                if(ax > x2)
+                    v = v2, ax = x2, ay = y2, d = d2;
 }
