@@ -86,16 +86,16 @@ void explore(){
         for(int j = 0; j < 5;j++)
             chk[i][j] = arr[i][j];
 
-    int tmp = calc();
-    while(tmp!= 0){ // 변화가 있으면
-        ans+= tmp;
+    int diff= calc();
+    while(diff!= 0){ // 변화가 있으면
+        ans+= diff;
         remove(); // 값 제거
         fill_blank();
         for(int i = 0; i<5;i++)
             for(int j = 0; j < 5;j++)
                 chk[i][j] = arr[i][j];
 
-        tmp = calc();
+        diff= calc();
 
     }
 
