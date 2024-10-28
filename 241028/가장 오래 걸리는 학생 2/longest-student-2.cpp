@@ -15,6 +15,10 @@ int cost[100001];
 void solve();
 void dijkstra();
 
+bool operator<(const edge& a,const edge& b){
+    return a.cost < b.cost;
+}
+
 int main() {
 
     ios::sync_with_stdio(false);
@@ -41,18 +45,20 @@ void solve(){
     cout << *max_element(cost, cost+n);
 }
 void dijkstra(){
-    queue <int> q;
+    priority_queue <edge> pq;
     
     for(int i = 1; i <= n;i++) cost[i] = INF;
     
-    q.push(k);
+    pq.push({k,0});
     cost[k] = 0;
-    while(!q.empty()){
-        int s = q.front();
-        q.pop();
+    while(!pq.empty()){
+        int s;
+        s = pq.top().e;
+
+        pq.pop();
         
         for(auto i : v[s])
             if(cost[s] + i.cost < cost[i.e])
-                cost[i.e] = cost[s] + i.cost, q.push(i.e); 
+                cost[i.e] = cost[s] + i.cost, pq.push({i.e,cost[i.e]}); 
     }
 }
