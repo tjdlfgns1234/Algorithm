@@ -32,7 +32,7 @@ void solve(){
     int s,e,c;
     for(int i = 0; i < m;i++){
         cin >> s >> e >> c;
-        // 무방향 그래프
+        // 단방향 그래프
         v[e].push_back({s, c}); 
     }
 
