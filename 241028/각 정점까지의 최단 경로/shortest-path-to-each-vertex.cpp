@@ -8,8 +8,8 @@ struct edge{
 
 int n, m, k;
 
-vector<vector<edge>> v(101);
-int cost[101];
+vector<vector<edge>> v(20001);
+int cost[20001];
 
 
 void solve();
