@@ -16,7 +16,7 @@ void solve();
 void dijkstra();
 
 bool operator<(const edge& a,const edge& b){
-    return a.cost < b.cost;
+    return a.cost > b.cost;
 }
 
 int main() {
