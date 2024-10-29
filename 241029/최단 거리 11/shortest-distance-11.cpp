@@ -9,8 +9,8 @@ struct edge{
 int n, m, k;
 
 vector<vector<edge>> v(1001);
+int g[1001][1001];
 int cost[1001];
-int path[1001];
 
 void solve();
 void dijkstra();
@@ -39,27 +39,44 @@ void solve(){
         // 양방향 그래프
         v[s].push_back({e, c}); 
         v[e].push_back({s, c}); 
+        g[s][e] = c;
+        g[e][s] = c;
     }
 
     int a, b;
     cin >> a >> b;
-    k = a;
+    k = b;
 
     dijkstra();
 
     int sx = b;
-    cout << cost[b] << '\n';
+    cout << cost[a] << '\n';
 
-    stack <int> ss;
+    int x = a;
 
-    while(sx != a){
-        ss.push(sx);
-        sx = path[sx];
+    cout << x << ' ';
+
+    while(x != b) {
+        for(int i = 1; i <= 5; i++) {
+            // 간선이 존재하지 않는 경우에는 넘어갑니다.
+            if(g[i][x] == 0)
+                continue;
+            
+            // 만약 b -> ... -> i -> x ... -> a로 
+            // 실제 최단거리가 나올 수 있는 상황이었다면
+            // i를 작은 번호부터 보고 있으므로
+            // 바로 선택해줍니다.
+            // cout << cost[i] << " " << g[i][x] << ' ' << cost[x] << '\n';
+            if(cost[i] + g[i][x] == cost[x]) {
+                x = i;
+                break;
+            }
+        }
+        cout << x << ' ';
     }
 
-    cout << a << ' ';
-    while(!ss.empty())
-        cout << ss.top() << ' ', ss.pop();
+ 
+
 }
 void dijkstra(){
     priority_queue <edge> pq;
@@ -76,10 +93,7 @@ void dijkstra(){
         
         for(auto i : v[s])
             if(cost[s] + i.cost < cost[i.e]){
-                cost[i.e] = cost[s] + i.cost, pq.push({i.e,cost[i.e]}), path[i.e] = s; 
-            }
-            else if(cost[s] + i.cost == cost[i.e] && path[i.e] > s){
-                path[i.e] = s; 
+                cost[i.e] = cost[s] + i.cost, pq.push({i.e,cost[i.e]}); 
             }
     }
 }
