@@ -57,7 +57,7 @@ void solve(){
     cout << x << ' ';
 
     while(x != b) {
-        for(int i = 1; i <= 5; i++) {
+        for(int i = 1; i <= n; i++) {
             // 간선이 존재하지 않는 경우에는 넘어갑니다.
             if(g[i][x] == 0)
                 continue;
