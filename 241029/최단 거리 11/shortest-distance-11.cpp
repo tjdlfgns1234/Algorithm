@@ -78,7 +78,7 @@ void dijkstra(){
             if(cost[s] + i.cost < cost[i.e]){
                 cost[i.e] = cost[s] + i.cost, pq.push({i.e,cost[i.e]}), path[i.e] = s; 
             }
-            else if(cost[s] + i.cost == cost[i.e] && path[i.e] < s){
+            else if(cost[s] + i.cost == cost[i.e] && path[i.e] > s){
                 path[i.e] = s; 
             }
     }
