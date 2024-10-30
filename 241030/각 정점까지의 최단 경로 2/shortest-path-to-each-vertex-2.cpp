@@ -9,6 +9,9 @@ int dist[SIZE][SIZE];
 
 int main() {
     // 여기에 코드를 작성해주세요.
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr), cout.tie(nullptr);
+
     solve();
 
     return 0;
