@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -48,6 +48,11 @@ void printNode(Node *target) {
 
 int main() {
     // 맨 처음 문자열을 입력 받습니다.
+
+    ios::sync_with_stdio(false);
+    cin.tie(NULL), cout.tie(NULL);
+
+
     string s;
     cin >> s;
 
