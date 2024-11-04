@@ -29,9 +29,7 @@ void solve(){
 
      for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= n; j++)
-            dist[i][j] = (int)1e9;
-
-        dist[i][i] = 0;
+            dist[i][j] = (int)1e9, dist2[i][j] = (int)1e9;
     }
 
     // 그래프를 인접행렬로 표현
