@@ -56,6 +56,9 @@ void solve(){
             cin >> a >> b >> c;
             insert_prev_multi(a, b, c);
         }
+        // cout << '\n';
+        // print();
+        // cout << '\n';
     }
 
     print();
@@ -207,7 +210,7 @@ void insert_prev_multi(string a, string b, string c){
     bool isahead = false;
     bool isbhead = false;
     bool ischead = false;
-    bool idx = 0, idx2 = 0;
+    int idx = 0, idx2 = 0;
 
     // a 위치 찾기
     for(int i = 1;i <= m;i++ ){
@@ -238,13 +241,6 @@ void insert_prev_multi(string a, string b, string c){
     // b 위치 찾기
     for(int i = 1;i <= m;i++ ){
         if(heads[i] != nullptr){
-            if(heads[i]->name == b){ // 헤드가 찾는 것이였다면
-                isbhead = true;
-                pos_b = heads[i];
-                idx = i;
-                break;
-            }
-
             Node* tmp = heads[i];
             while(tmp!=nullptr){
                 if(tmp->name == b){
@@ -267,7 +263,7 @@ void insert_prev_multi(string a, string b, string c){
             pos_b->prev = nullptr;
         }
         else
-            heads[idx] = pos_b->next;
+            heads[idx] = nullptr;
     }
     else{
         if(pos_a->prev != nullptr)
@@ -302,7 +298,6 @@ void insert_prev_multi(string a, string b, string c){
                 break;
         }
     }
-
 
     if(ischead){    // c가 헤드였다면
         pos_c->prev = pos_b;
