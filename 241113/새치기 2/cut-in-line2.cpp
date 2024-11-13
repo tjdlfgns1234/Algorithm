@@ -89,7 +89,11 @@ void insert_prev(string a, string b) {
             
 }
 void remove(string a) {
-    heads[mp[a]].erase(remove(all(heads[mp[a]]), a));
+    for (auto it = heads[mp[a]].begin(); it != heads[mp[a]].end(); it++) 
+        if(*it == a){
+            heads[mp[a]].erase(it);
+            break;
+        }
     mp[a] = -1;
 }
 void insert_prev_multi(string a, string b, string c) {
