@@ -106,18 +106,17 @@ void insert_prev_multi(string a, string b, string c) {
         else if (f)
             tmp.push_back(*it);
     
-    f = false;
-
     //print();
 
     auto tmp_it = tmp.begin();
     for (auto it = heads[mp[a]].begin(); it != heads[mp[a]].end(); it++) 
         if (*it == *tmp_it) 
-            it = heads[mp[a]].erase(it), tmp_it++, it--;
+            it = heads[mp[a]].erase(it) ,tmp_it++, it--;
 
     //print();
 
-
+    for (auto it = tmp.begin(); it != tmp.end(); it++) 
+        mp[*it] = mp[c];
 
     for (auto it = heads[mp[c]].begin(); it != heads[mp[c]].end(); it++)
         if (*it == c)
