@@ -51,8 +51,8 @@ int dfs(int s);
 
 int n, m;
 
-vector<vector<int>> g(1001);
-int vit[1001] = { false };
+vector<vector<int>> g(501);
+int vit[501] = { false };
 
 
 int main()
@@ -72,7 +72,7 @@ void solve() {
     for (int i = 0; i < m; i++) {
         cin >> x >> y;
         g[x].push_back(y);
-        // g[y].push_back(x);
+        g[y].push_back(x);
     }
 
     int ans = 0;
@@ -87,15 +87,22 @@ int dfs(int s) {
     queue <int> q;
     q.push(s);
     vit[s] = true;
-    while (!q.empty()) {
-        int x = q.front();
-        q.pop();
 
-        for (auto i : g[x])
+    int cntV = 0, cntE = 0;
+    while (!q.empty()) {
+        int x = q.front(); q.pop();
+        cntV++;
+
+        for (auto i : g[x]) {
+            cntE++;
             if (!vit[i])
                 vit[i] = true, q.push(i);
-            else
-                return 0;
+        }
+            
     }
+
+    if (cntE / 2 != cntV - 1)
+        return 0;
+
     return 1;
 }
