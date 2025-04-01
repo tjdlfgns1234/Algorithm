@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
-#define MAX 1001
+#define MAX 32001
 
 using namespace std;
 
