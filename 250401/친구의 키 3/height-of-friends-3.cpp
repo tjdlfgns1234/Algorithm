@@ -14,9 +14,8 @@ typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 
 vector<vector<int>> g(MAX);
-bool vit[MAX + 1] = { false };
-int ans[MAX + 1] = {0};
-int indeg[MAX + 1] = { 0 };
+bool vit[MAX] = { false };
+int indeg[MAX] = { 0 };
 stack<int> rev;
 int n, m, cnt = 1;
 
