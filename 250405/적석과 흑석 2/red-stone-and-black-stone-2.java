@@ -68,13 +68,13 @@ public class Main {
         // y값이 작은 순으로정렬
         // y가 같으면 x값이 작은 순으로
         Arrays.sort(blackStone, (a, b) -> {
-            if (a.y != b.y) return a.y - b.y; 
-            return a.x - b.x;                  
+            if (a.x!= b.x) return a.x - b.x; 
+            return a.y - b.y;                  
         });
 	 
-//        for(int i = 0; i < m;i++) 
-//	 	    System.out.println(blackStone[i].x + " " + blackStone[i].y);
-//        
+        // for(int i = 0; i < m;i++) 
+	 	//     System.out.println(blackStone[i].x + " " + blackStone[i].y);
+        
     	int cur = -1;
 	    for(int i = 0; i < m;i++) {
 	    	if(cur == -1 && pq.isEmpty())
