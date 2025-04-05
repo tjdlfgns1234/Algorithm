@@ -60,16 +60,18 @@ public class Main {
     public static void solve() throws IOException {
         // 입력부
     	// 자바는 minheap
-    	PriorityQueue<Integer> pq = new PriorityQueue<>();
+    	// PriorityQueue<Integer> pq = new PriorityQueue<>();
+    	TreeSet<Integer> redS = new TreeSet<>();
+    	
     	
         for(int i = 0; i < n;i++) 
-	 	    pq.add(redStone[i]);
+        	redS.add(redStone[i]);
 	    
         // y값이 작은 순으로정렬
         // y가 같으면 x값이 작은 순으로
         Arrays.sort(blackStone, (a, b) -> {
-            if (a.x!= b.x) return a.x - b.x; 
-            return a.y - b.y;                  
+            if (a.y!= b.y) return a.y - b.y; 
+            return a.x - b.x;                  
         });
 	 
         // for(int i = 0; i < m;i++) 
@@ -77,37 +79,17 @@ public class Main {
         
     	int cur = -1;
 	    for(int i = 0; i < m;i++) {
-	    	if(cur == -1 && pq.isEmpty())
-	    		break;
-	 	
-	    	if(cur == -1)
-	    		cur = pq.poll();
+	    	int x = blackStone[i].x;
+	    	int y = blackStone[i].y;
 	    	
-	 
-	        
-	    	while(blackStone[i].x > cur) {
-	    		// System.out.println(cur + " " + i);
-	    		if(pq.isEmpty()) {
-	    			cur = -1;
-	    			break;
-	    		}
-	    		else {
-	    			cur = pq.poll();
-	    			break;
-	    		}
-	    	}
-	    	
-	    	if(cur  >  blackStone[i].y)
-	    		continue;
-	 	    
-	    	if(blackStone[i].x <= cur && cur <= blackStone[i].y) {
-	    		ans++;
-	    	 
-	    		cur = -1;
+	    	if(redS.ceiling(x) != null) {
+	    		int num = redS.ceiling(x);
+	    		if(num <= y) {
+	    			ans++;
+	    			redS.remove(num);
+	    		}	
 	    	}
 	    }
-	    	
-        
    }
 
 }
