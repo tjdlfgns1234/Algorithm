@@ -26,14 +26,17 @@ void solve() {
 
 
     int n = st.size();
-    set<string> s;
-    for(int i = 0; i < n;i++)
+
+    for(int i = 0; i < n;i++){
+        set<string> s;
         for(int j = 0; j < n-i;j++){
          
             s.insert(st.substr(j, i + 1));
             //ans += s.size();
             //s.clear();
         }
-    ans = s.size();
+        ans += s.size();
+    }
+    // ans = s.size();
     cout << ans;
 }
