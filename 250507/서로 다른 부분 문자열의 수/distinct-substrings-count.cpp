@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
-#define k 31
+#define k 347
 #define MOD 1000000007
 #define MAX 5001
 #define INF 987654321
