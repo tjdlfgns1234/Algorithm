@@ -80,13 +80,11 @@ bool Hashing(int size, int n)
 		hash2 = (hash2 + st[i]) % MOD2;
 
 		mp[{ hash, hash2 }]++;
+		if (mp[{ hash, hash2 }] >=2)
+			return true; 
 		// cout << hash << '\n';
 	}
 	// cout << s.size() << " " << ans << '\n';
-	
-	for (auto& i : mp) 
-		if (i.second >= 2) 
-			return true;
 
 	return false;
 }
