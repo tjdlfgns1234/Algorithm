@@ -1,6 +1,4 @@
 #include<bits/stdc++.h>
-#include<unordered_set>
-#include<unordered_map>
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
 #define k 347
@@ -15,7 +13,7 @@ vector<vector<int>> arr(MAX);
 int d[MAX] = { 0 };
 int p[MAX] = { 0 };
 void solve();
-void bfs();
+void dfs(int cur);
 int lca(int x, int y);
 
 int main() {
@@ -40,7 +38,8 @@ void solve() {
 
 	for (int i = 1; i <= n; i++) if(p[i] == 0) root = i;
 
-	bfs(); // 깊이 탐색
+    d[root] = 1;
+	dfs(root); // 깊이 탐색, root는 depth가 1
 
 	// cin >> m;
 	// for(int i = 0; i < m;i++)
@@ -48,21 +47,10 @@ void solve() {
 
 
 }
-void bfs() {
-	// int root = 1; // 루트는 1로 가정
-
-	queue<int> q;
-	q.push(root);
-	d[root] = 1;
-	p[root] = 1;
-	while (!q.empty()) {
-		int cur = q.front();
-		q.pop();
-
-		for (auto& i : arr[cur]) 
-			if (!d[i])
-				q.push(i), d[i] = d[cur] + 1;
-	}
+void dfs(int cur) {
+    for(auto& i : arr[cur])
+        if(!d[i])
+            d[i] = d[cur] + 1, dfs(i);
 }
 int lca(int x, int y) {
 	if (d[x] < d[y]) swap(x, y);
