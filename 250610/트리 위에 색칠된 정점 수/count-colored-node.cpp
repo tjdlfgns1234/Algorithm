@@ -73,7 +73,7 @@ void solve() {
 
 	for (int i = 1; i <= h; i++)
 		for (int j = 2; j <= n; j++) // 1은 루트 이므로 제외
-			if (p[j][i - 1])
+			// if (p[j][i - 1])
 				p[j][i] = p[p[j][i - 1]][i - 1];
 
 	// 쿼리 파트
