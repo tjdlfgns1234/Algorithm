@@ -51,7 +51,7 @@ void solve() {
 			dp[i] = 0;
 		else {
 			int ii = 2 * p - i;
-			dp[i] = min(r - i, dp[i]);
+			dp[i] = min(r - i, dp[ii]);
 		}
 	
 		while (i - dp[i] - 1 >= 0 && i + dp[i] + 1 < n &&
