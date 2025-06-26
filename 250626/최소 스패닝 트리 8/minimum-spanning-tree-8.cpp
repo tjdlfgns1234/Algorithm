@@ -41,8 +41,10 @@ void solve() {
 		cin >> a >> b >> c;
 
 		// 양방향
-		g[a][b] = c;
-		g[b][a] = c;
+        if(g[a][b] == 0)
+		    g[a][b] = c, g[b][a] = c;
+        else
+            g[a][b] = min(g[a][b],c), g[b][a] = min(g[b][a],c);
 	}
 
 	for (int i = 1; i <= n; i++)
