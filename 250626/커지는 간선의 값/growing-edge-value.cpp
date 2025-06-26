@@ -40,7 +40,7 @@ int main()
 	return 0;
 }
 void solve() {
-	int n, m, k;
+	ll n, m, k;
 	cin >> n >> m >> k;
 
 	int a, b, c;
