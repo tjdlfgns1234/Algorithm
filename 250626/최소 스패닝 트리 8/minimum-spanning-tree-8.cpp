@@ -14,8 +14,8 @@ typedef pair<ll, ll> pll;
 
 void solve();
 int g[501][501];
-int cost[1000] = { 0 };
-bool vit[1000] = { false };
+int cost[1001] = { 0 };
+bool vit[1001] = { false };
 
 int main()
 {
@@ -45,7 +45,7 @@ void solve() {
 		g[b][c] = c;
 	}
 
-	for (int i = 0; i <= n; i++)
+	for (int i = 1; i <= n; i++)
 		cost[i] = INF;
 
 	int ans = 0;
