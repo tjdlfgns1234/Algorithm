@@ -2,7 +2,7 @@
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
 #define MAX 100'001
-#define INF 100'000'000'000'000'001
+#define INF 1'000'000'000'000'000'001
 
 using namespace std;
 
