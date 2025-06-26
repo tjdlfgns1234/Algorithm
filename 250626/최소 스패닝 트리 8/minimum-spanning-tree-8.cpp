@@ -49,7 +49,7 @@ void solve() {
 		cost[i] = INF;
 
 	int ans = 0;
-	cost[1] = 0;
+	cost[n] = 0;
 
 	for (int i = 1; i <= n; i++) {
 	
