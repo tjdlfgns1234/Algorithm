@@ -59,6 +59,8 @@ void solve() {
 	dist[1] = 0;
 	pq.push({ 1, 0 });
 
+    int cnt = 0;
+
 	while (!pq.empty()) {
 	
 		p cur = pq.top();
@@ -68,13 +70,13 @@ void solve() {
 
 		vit[cur.to] = true;
 		ans += cur.dist;
-	
+
 		for (auto& i : g[cur.to]) {
-			if (i.dist +k  < dist[i.to]) {
-				dist[i.to] = i.dist +k;
+			if (i.dist < dist[i.to]) {
+				dist[i.to] = i.dist;
 				pq.push({ i.to, dist[i.to] });
 			}
 		}
 	}
-	cout << ans;
+	cout << ans + k*(n-1)*(n-2)/2;
 }
