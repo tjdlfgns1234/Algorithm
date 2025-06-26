@@ -42,14 +42,14 @@ void solve() {
 
 		// 양방향
 		g[a][b] = c;
-		g[b][c] = c;
+		g[b][a] = c;
 	}
 
 	for (int i = 1; i <= n; i++)
 		cost[i] = INF;
 
 	int ans = 0;
-	cost[n] = 0;
+	cost[1] = 0;
 
 	for (int i = 1; i <= n; i++) {
 	
