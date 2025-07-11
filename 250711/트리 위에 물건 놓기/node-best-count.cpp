@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
-#define MAX 10'001
+#define MAX 100'001
 #define INF 1e9
 
 using namespace std;
