@@ -63,7 +63,7 @@ void dfs(int cur, int pre){
         if(!vit[child]) {
             vit[child] = true, dfs(child, cur);
             dp[cur][0] += dp[child][1];
-            dp[cur][1] += dp[child][0];
+            dp[cur][1] += min(dp[child][0], dp[child][1]);
         }
     
     // cout << cur << " : " << dp[cur][0] << " " << dp[cur][1] << '\n';
