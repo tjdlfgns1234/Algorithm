@@ -21,11 +21,11 @@ struct Pair {
 
 int n;
 Pair arr[MAX];
-int dp[MAX][MAX];
+ll dp[MAX][MAX];
 
 
 void solve();
-int dist(const Pair a, const Pair b);
+ll dist(const Pair a, const Pair b);
 
 bool operator<(const Pair a, const Pair b) {
 	return a.x < b.x;
@@ -54,7 +54,7 @@ void solve() {
 		cin >> arr[i].x >> arr[i].y;
 	
 
-	sort(arr+1, arr + n+1);
+	sort(arr, arr + n+1);
 
 	// cout << arr[1].x << " " << arr[n].x << '\n';
 
@@ -75,11 +75,11 @@ void solve() {
 			dp[i][next] = min(dp[i][next], dp[i][j] + dist(arr[j], arr[next]));
 		}
 	
-	int ans = INF;
+	ll ans = INF;
 	for (int i = 1; i < n; i++) ans = min(ans, dp[i][n] + dist(arr[i], arr[n]));
 
 	cout << ans;
 }
-int dist(const Pair a, const Pair b) {
+ll dist(const Pair a, const Pair b) {
 	return ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 }
