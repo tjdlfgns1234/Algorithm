@@ -54,7 +54,7 @@ void solve() {
 		cin >> arr[i].x >> arr[i].y;
 	
 
-	sort(arr, arr + n+1);
+	sort(arr+1, arr + n+1);
 
 	// cout << arr[1].x << " " << arr[n].x << '\n';
 
