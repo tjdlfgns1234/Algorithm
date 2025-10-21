@@ -48,17 +48,15 @@ int main()
 void solve() {
 	cin >> n;
 
-	int start = 0, value = INF;
-	for (int i = 1; i <= n; i++) {
+	memset(arr, 0, sizeof(arr));
+
+	for (int i = 1; i <= n; i++) 
 		cin >> arr[i].x >> arr[i].y;
+	
 
-		// 값은 전부 다름
-		if (value > arr[i].x) 
-			value = arr[i].x, start = i;
-	}
+	sort(arr, arr + n+1);
 
-	sort(arr+1, arr + n+1);
-
+	// cout << arr[1].x << " " << arr[n].x << '\n';
 
 	for (int i = 1; i < MAX; i++)
 		for (int j = 1; j < MAX; j++)
