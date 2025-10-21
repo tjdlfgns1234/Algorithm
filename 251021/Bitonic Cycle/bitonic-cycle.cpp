@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
-#define INF 1e9
+#define INF 1e11
 #define sum(a) (a*(a+1)/2)
 
 using namespace std;
